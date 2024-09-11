@@ -1,3 +1,4 @@
+
 import os
 
 from dotenv import load_dotenv
@@ -16,10 +17,10 @@ def is_enabled(value, default):
 
 # Mandatory variables for the bot to start
 # API ID from https://my.telegram.org/auth
-API_ID = int(os.environ.get("API_ID', '23171051"))
+API_ID = int(os.environ.get("API_ID", "23171051"))
 # API Hash from https://my.telegram.org/auth
-API_HASH = os.environ.get("API_HASH")
-BOT_TOKEN = os.environ.get("BOT_TOKEN")  # Bot token from @BotFather
+API_HASH = os.environ.get("API_HASH", "10331d5d712364f57ffdd23417f4513c")
+BOT_TOKEN = os.environ.get("BOT_TOKEN", "6737943130:AAENzY3vZdDVo6jsfvvip019IRzbp38h01U")  # Bot token from @BotFather
 ADMINS = (
     [int(i.strip()) for i in os.environ.get("ADMINS").split(",")]
     if os.environ.get("ADMINS")
