@@ -22,21 +22,20 @@ API_ID = int(os.environ.get("API_ID", "23171051"))
 API_HASH = os.environ.get("API_HASH", "10331d5d712364f57ffdd23417f4513c")
 BOT_TOKEN = os.environ.get("BOT_TOKEN", "6737943130:AAENzY3vZdDVo6jsfvvip019IRzbp38h01U")  # Bot token from @BotFather
 ADMINS = (
-    [int(i.strip()) for i in os.environ.get("ADMINS").split(",")]
-    if os.environ.get("ADMINS")
+    [int(i.strip()) for i in os.environ.get("ADMINS", "6987799874").split(",")]
+    if os.environ.get("ADMINS", "6987799874")
     else []
 )
 
-DATABASE_NAME = os.environ.get("DATABASE_NAME", "MdiskConvertor")
+DATABASE_NAME = os.environ.get("DATABASE_NAME", "techvjautobot")
 DATABASE_URL = os.environ.get(
-    "DATABASE_URL", None
-)  # mongodb uri from https://www.mongodb.com/
+    "DATABASE_URL", "mongodb+srv://tabolo8539:0evqZDV4fC5fD17c@cluster0.cw8zxus.mongodb.net/?retryWrites=true&w=majority")  # mongodb uri from https://www.mongodb.com/
 OWNER_ID = int(os.environ.get("OWNER_ID"))  # id of the owner
 ADMINS.append(OWNER_ID) if OWNER_ID not in ADMINS else []
 
 #  Optionnal variables
 LOG_CHANNEL = int(
-    os.environ.get("LOG_CHANNEL", "0")
+    os.environ.get("LOG_CHANNEL", "-1002012824372")
 )  # log channel for information about users
 UPDATE_CHANNEL = int(os.environ.get(
     "UPDATE_CHANNEL", False))  # For Force Subscription
@@ -50,7 +49,7 @@ SOURCE_CODE = os.environ.get(
     "SOURCE_CODE", "https://github.com/kevinnadar22/URL-Shortener-V2"
 )  # for upstream repo
 # image when someone hit /start
-WELCOME_IMAGE = os.environ.get("WELCOME_IMAGE", "")
+WELCOME_IMAGE = os.environ.get("WELCOME_IMAGE", "hai im link shotner")
 LINK_BYPASS = is_enabled(
     (os.environ.get("LINK_BYPASS", "False")), False
 )  # if true, urls will be bypassed
@@ -60,8 +59,8 @@ BASE_SITE = os.environ.get("BASE_SITE", "droplink.co")
 # For Admin use
 CHANNELS = is_enabled((os.environ.get("CHANNELS", "True")), True)
 CHANNEL_ID = (
-    [int(i.strip()) for i in os.environ.get("CHANNEL_ID").split(" ")]
-    if os.environ.get("CHANNEL_ID")
+    [int(i.strip()) for i in os.environ.get("CHANNEL_ID", "-1002248276059").split(" ")]
+    if os.environ.get("CHANNEL_ID", "-1002248276059")
     else []
 )
 
